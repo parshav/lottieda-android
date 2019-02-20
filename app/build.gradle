@@ -27,12 +27,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    dynamicFeatures = [":base"]
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':base')
 
     implementation deps.base.stdlibKt
 

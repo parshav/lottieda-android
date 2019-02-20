@@ -1,9 +1,9 @@
-apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
-    
-
+    baseFeature true
 
     defaultConfig {
         minSdkVersion 21
@@ -11,13 +11,19 @@ android {
         versionCode 1
         versionName "1.0"
 
-
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':app')
+    application project(':app')
+
+    implementation deps.base.stdlibKt
+
+    implementation deps.androidx.ktx
+    implementation deps.androidx.design
+
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.androidTestRunner
+    androidTestImplementation deps.test.espressoCore
 }
