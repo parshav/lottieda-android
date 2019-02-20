@@ -21,10 +21,7 @@ android {
         }
     }
 
-
     dynamicFeatures = [":base"]
-
-
 }
 
 dependencies {
