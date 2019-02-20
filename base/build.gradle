@@ -19,6 +19,7 @@ dependencies {
     application project(':app')
 
     implementation deps.base.stdlibKt
+    implementation deps.base.koin
 
     implementation deps.androidx.ktx
     implementation deps.androidx.design

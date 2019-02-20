@@ -1,12 +1,11 @@
 package com.pv.pvbase
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.pv.base.BaseActivity
+import com.pv.base.ui
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+/*
+* This will not yet work as no baseFragment is defined.
+* */
+class MainActivity : BaseActivity() {
+    override fun uiBuilder() = ui {}
 }

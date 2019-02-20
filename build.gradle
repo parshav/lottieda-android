@@ -40,13 +40,16 @@ ext {
     androidTestRunnerVersion = '1.1.0'
     espressoVersion = '3.0.2'
     coreVersion = '1.0.0'
+
+    koinVersion = '1.0.2'
 }
 
 ext.deps = [
 
         'base'    :
                 [
-                        stdlibKt: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+                        stdlibKt: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+                        koin    : "org.koin:koin-androidx-scope:$koinVersion"
 
                 ],
         // Test Dependencies
