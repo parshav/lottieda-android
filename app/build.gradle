@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -34,6 +32,7 @@ dependencies {
     implementation project(':base')
 
     implementation deps.base.stdlibKt
+    implementation deps.base.koin
 
     implementation deps.androidx.ktx
     implementation deps.androidx.design
