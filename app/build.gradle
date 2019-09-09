@@ -37,7 +37,12 @@ dependencies {
     implementation deps.androidx.ktx
     implementation deps.androidx.design
 
+    implementation deps.misc.lottie
+    implementation deps.misc.fbStorage
+
     testImplementation deps.test.junit
     androidTestImplementation deps.test.androidTestRunner
     androidTestImplementation deps.test.espressoCore
 }
+
+apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin

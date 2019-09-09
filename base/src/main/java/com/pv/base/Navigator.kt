@@ -41,7 +41,7 @@ internal class GlobalNavigator(
                 R.anim.abc_fade_in,
                 R.anim.abc_slide_out_bottom
             )
-            .replace(if (type == NavigationType.Screen) R.id.home_container else R.id.fl_container, screen)
+            .replace(if (type == NavigationType.Screen) R.id.fl_container else R.id.fl_container, screen)
             .addToBackStack(null)
             .commit()
     }
