@@ -36,7 +36,7 @@ abstract class BaseScreen : Fragment() {
     abstract fun ui(): Screen
 
     abstract fun onViewLoaded(view: View)
-    abstract fun bindings(): Array<temp>
+    open fun bindings(): Array<temp> = emptyArray()
 
     open fun screenOnStop() {
 
