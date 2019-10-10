@@ -1,4 +1,4 @@
-package com.pv.pvbase
+package com.pv.lottieda
 
 import com.pv.base.BaseActivity
 import com.pv.base.NavigatorTemplate

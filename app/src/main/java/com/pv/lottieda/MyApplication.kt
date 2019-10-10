@@ -1,4 +1,4 @@
-package com.pv.pvbase
+package com.pv.lottieda
 
 import android.app.Application
 import com.google.firebase.FirebaseApp
