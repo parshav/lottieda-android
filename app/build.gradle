@@ -39,6 +39,7 @@ dependencies {
     implementation deps.androidx.design
 
     implementation deps.misc.lottie
+    implementation deps.misc.fuel
     implementation deps.misc.fbStorage
 
     testImplementation deps.test.junit

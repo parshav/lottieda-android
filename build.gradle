@@ -47,6 +47,7 @@ ext {
     //misc
     lottieVersion = '3.0.7'
     fbStorageVersion = '19.0.0'
+    fuelVersion = '2.2.0'
 }
 
 ext.deps = [
@@ -73,6 +74,7 @@ ext.deps = [
                         design: "com.google.android.material:material:$androidxDesignVersion",
                 ],
 
+
         'rx'      :
                 [
                         rxJava : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
@@ -81,6 +83,7 @@ ext.deps = [
         'misc'    :
                 [
                         lottie   : "com.airbnb.android:lottie:$lottieVersion",
+                        fuel     : "com.github.kittinunf.fuel:fuel:$fuelVersion",
                         fbStorage: "com.google.firebase:firebase-storage:$fbStorageVersion"
                 ]
 ]

@@ -15,8 +15,6 @@ class LottieScreen : BaseScreen() {
     private lateinit var lottieView: LottieAnimationView
     private lateinit var settingsButton: Button
 
-    val lottieSource = LottieSource()
-
     private lateinit var disposable: Disposable
 
     override fun ui() = screen {
@@ -31,9 +29,8 @@ class LottieScreen : BaseScreen() {
 
         }
 
-        disposable = lottieSource.source
-            .doAfterNext { lottieView.playAnimation() }
-            .subscribe(lottieView::setAnimationFromUrl)
+        lottieView.setAnimationFromUrl("http://x.x.x.x:7777")
+        lottieView.playAnimation()
     }
 
     override fun onDetach() {
