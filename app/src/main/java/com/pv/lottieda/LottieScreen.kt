@@ -6,6 +6,8 @@ import com.airbnb.lottie.LottieAnimationView
 import com.google.firebase.storage.FirebaseStorage
 import com.pv.base.BaseScreen
 import com.pv.base.screen
+import com.pv.base.temp
+import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.screen_lottie.view.*
 
 class LottieScreen : BaseScreen() {
@@ -13,8 +15,9 @@ class LottieScreen : BaseScreen() {
     private lateinit var lottieView: LottieAnimationView
     private lateinit var settingsButton: Button
 
-    private val storage = FirebaseStorage.getInstance()
-    private val ref = storage.reference
+    val lottieSource = LottieSource()
+
+    private lateinit var disposable: Disposable
 
     override fun ui() = screen {
         layout = R.layout.screen_lottie
@@ -28,15 +31,13 @@ class LottieScreen : BaseScreen() {
 
         }
 
-        update()
+        disposable = lottieSource.source
+            .doAfterNext { lottieView.playAnimation() }
+            .subscribe(lottieView::setAnimationFromUrl)
     }
 
-    private fun update() {
-        lottieView.cancelAnimation()
-        ref.child("card_controls.json")
-            .downloadUrl
-            .addOnSuccessListener {
-                lottieView.setAnimationFromUrl(it.toString())
-            }
+    override fun onDetach() {
+        super.onDetach()
+        disposable.dispose()
     }
 }

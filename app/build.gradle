@@ -33,6 +33,7 @@ dependencies {
 
     implementation deps.base.stdlibKt
     implementation deps.base.koin
+    implementation deps.rx.rxRelay
 
     implementation deps.androidx.ktx
     implementation deps.androidx.design
