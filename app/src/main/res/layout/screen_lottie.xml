@@ -11,16 +11,24 @@
             android:layout_height="wrap_content"
             android:background="#000D47A1">
 
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="end">
 
-            <Button
-                    android:id="@+id/btn_settings"
-                    android:layout_width="wrap_content"
+            <EditText
+                    android:id="@+id/et_source"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:text="Gear"
+                    android:hint="http://x.x.x.x:7777"/>
+
+            <ImageView
+                    android:contentDescription="Refresh"
+                    android:src="@drawable/ic_baseline_refresh_24"
+                    android:id="@+id/btn_refresh"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
                     android:textAllCaps="false" />
 
         </LinearLayout>
