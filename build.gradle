@@ -36,6 +36,7 @@ ext {
     // rx
     rxJavaVersion = '2.2.6'
     rxRelayVersion = '2.1.0'
+    rxBindingVersion = '3.0.0'
 
     // Test Versions
     junitVersion = '4.12'
@@ -79,6 +80,7 @@ ext.deps = [
                 [
                         rxJava : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
                         rxRelay: "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion",
+                        binding: "com.jakewharton.rxbinding3:rxbinding:$rxBindingVersion"
                 ],
         'misc'    :
                 [
