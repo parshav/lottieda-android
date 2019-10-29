@@ -1,19 +1,16 @@
 package com.pv.lottieda
 
+import android.content.Context
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
+import androidx.core.content.edit
 import com.airbnb.lottie.LottieAnimationView
-import com.airbnb.lottie.LottieComposition
-import com.airbnb.lottie.LottieCompositionFactory
 import com.jakewharton.rxbinding3.view.clicks
-import com.jakewharton.rxrelay2.BehaviorRelay
 import com.pv.base.BaseScreen
+import com.pv.base.hideKeyboard
 import com.pv.base.screen
 import kotlinx.android.synthetic.main.screen_lottie.view.*
-import java.net.MalformedURLException
-import kotlin.Exception
 
 class LottieScreen : BaseScreen() {
 
@@ -21,18 +18,27 @@ class LottieScreen : BaseScreen() {
     private lateinit var refreshButton: ImageView
     private lateinit var sourceText: EditText
 
+    private val preferences by lazy { activity!!.getSharedPreferences("default" ,Context.MODE_PRIVATE) }
+
     override fun ui() = screen {
         layout = R.layout.screen_lottie
     }
 
     override fun onViewLoaded(view: View) {
+
         lottieView = view.lottie_view
         refreshButton = view.btn_refresh
         sourceText = view.et_source
 
+        sourceText.setText(preferences.getString(SOURCE_KEY, ""))
+
         baseDisposable += refreshButton
             .clicks()
             .map { sourceText.text.toString() }
+            .doOnNext {
+                sourceText.hideKeyboard()
+                saveSource(it)
+            }
             .subscribe(::tryPlay)
     }
 
@@ -52,7 +58,13 @@ class LottieScreen : BaseScreen() {
             else "http://${source}"
         )
         lottieView.playAnimation()
+    }
 
+    private fun saveSource(value: String) = preferences.edit {
+            putString(SOURCE_KEY, value)
+        }
+
+    companion object {
+        private const val SOURCE_KEY = "sourceKey"
     }
 }
-
