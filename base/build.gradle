@@ -22,6 +22,8 @@ dependencies {
     implementation deps.androidx.ktx
     implementation deps.androidx.design
 
+    implementation deps.rx.rxRelay
+
     testImplementation deps.test.junit
     androidTestImplementation deps.test.androidTestRunner
     androidTestImplementation deps.test.espressoCore

@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#003b70">
+        android:background="#003b70"
+        android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="#000D47A1">
 
-        <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottie_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:orientation="horizontal">
-
-            <Button
-                    android:id="@+id/btn_refresh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Refresh"
-                    android:textAllCaps="false"/>
+                android:layout_height="match_parent"
+                android:gravity="end">
 
             <EditText
-                    android:id="@+id/et_filename"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/et_source"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:hint="TestFilename.json"/>
+                    android:hint="http://x.x.x.x:7777"/>
+
+            <ImageView
+                    android:contentDescription="Refresh"
+                    android:src="@drawable/ic_baseline_refresh_24"
+                    android:id="@+id/btn_refresh"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:textAllCaps="false" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
 
-</ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+</LinearLayout>
